@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="hero">
+    <h1>Movie Ticket Booking</h1>
+    <p>Browse movies, check show timings, and manage your tickets.</p>
+</header>
+<main class="container">
+    <section class="panel" id="movies-panel">
+        <div class="panel-header">
+            <h2>Now Showing</h2>
+            <p>Quick overview of all available movies.</p>
+        </div>
+        <div class="card-grid" id="movies-list"></div>
+    </section>
+
+    <section class="panel" id="shows-panel">
+        <div class="panel-header">
+            <h2>Show Schedule</h2>
+            <p>Select a show to view details or manage tickets.</p>
+        </div>
+        <div class="shows-table-wrapper">
+            <table class="shows-table">
+                <thead>
+                <tr>
+                    <th>Show ID</th>
+                    <th>Movie</th>
+                    <th>Start Time</th>
+                    <th>Seats</th>
+                </tr>
+                </thead>
+                <tbody id="shows-table-body"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="panel" id="actions-panel">
+        <div class="panel-header">
+            <h2>Manage Tickets</h2>
+            <p>Choose an action below to book or cancel seats.</p>
+        </div>
+        <form class="action-form" id="action-form">
+            <label>
+                Select Show
+                <select id="show-select"></select>
+            </label>
+            <label>
+                Seats
+                <input type="number" id="seat-count" min="1" value="1" required />
+            </label>
+            <div class="button-row">
+                <button type="button" id="book-btn" class="primary">Book Seats</button>
+                <button type="button" id="cancel-btn" class="secondary">Cancel Seats</button>
+            </div>
+        </form>
+        <div class="show-details" id="show-details"></div>
+        <p class="status" id="status-message"></p>
+    </section>
+</main>
+<footer>
+    <p>Data is stored locally for demo purposes. Refresh to reset availability.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
